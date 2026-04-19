@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sundus CV</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+<canvas id="bgCanvas"></canvas>
+
+<div class="container">
+
+<header>
+    <h1>Sundus Alotaibi</h1>
+    <p class="subtitle">Computer Information Systems Student at Shaqra University</p>
+
+    <div class="contact">
+        <span class="phone">📞 0505541153</span>
+        <span>📧 Ps.sondos@gmail.com</span>
+        <span>🔗 LinkedIn</span>
+    </div>
+</header>
+
+<!-- ABOUT -->
+<section class="card about">
+    <h2>About Me</h2>
+    <p>
+        Computer Information Systems student at Shaqra University with a strong interest in Artificial Intelligence,
+        web development, and database systems. Passionate about building practical solutions and continuously
+        developing technical and analytical skills. I enjoy working on real-world projects that solve meaningful
+        problems and enhance user experience, while constantly learning and improving my technical expertise.
+    </p>
+</section>
+
+<!-- SKILLS -->
+<section class="card">
+    <h2>Skills</h2>
+
+    <div class="skills-wrapper">
+
+        <!-- Technical -->
+        <div class="skills-section">
+            <h3>Technical Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-box">HTML</div>
+                <div class="skill-box">CSS</div>
+                <div class="skill-box">Python</div>
+                <div class="skill-box">SQL</div>
+                <div class="skill-box">Database Design</div>
+                <div class="skill-box">Microsoft Azure</div>
+            </div>
+        </div>
+
+        <!-- Soft -->
+        <div class="skills-section">
+            <h3>Soft Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-box">Teamwork</div>
+                <div class="skill-box">Communication</div>
+                <div class="skill-box">Presentation</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="card highlight">
+    <h2>Projects</h2>
+
+    <div class="project main-project">
+        <h3>Sharek 🌱</h3>
+        <p>Platform for donating and selling school supplies.</p>
+    </div>
+
+    <div class="project">
+        <h3>Airline Database</h3>
+        <p>SQL system managing flights and passengers.</p>
+    </div>
+
+    <div class="project">
+        <h3>Gym System</h3>
+        <p>GUI system with charts & CRUD.</p>
+    </div>
+
+    <div class="project">
+        <h3>Glowly Spas</h3>
+        <p>Booking platform using Agile.</p>
+    </div>
+
+</section>
+
+<!-- EXPERIENCE -->
+<section class="card">
+    <h2>Experience</h2>
+
+    <div class="exp-item">
+        <h3>Leader of Design Team</h3>
+        <p class="place">GDGoC Shaqra</p>
+        <span class="date">Aug 2025 – Present · 9 months</span>
+    </div>
+
+    <div class="exp-item">
+        <h3>Design Team Member</h3>
+        <p class="place">GDGoC Shaqra</p>
+        <span class="date">Jan 2025 – Jul 2025 · 7 months</span>
+    </div>
+
+    <div class="exp-item">
+        <h3>Women Elevate Program – Microsoft</h3>
+        <p class="place">AI & Azure Training Program</p>
+        <span class="date">5 weeks · Completed March 8</span>
+    </div>
+
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="card">
+    <h2>Certifications</h2>
+
+    <div class="cert-grid">
+        <div class="cert-box">Microsoft Azure AI Fundamentals</div>
+        <div class="cert-box">HTML Essentials – Cisco</div>
+
+        <div class="cert-box">Database Design – Oracle</div>
+        <div class="cert-box">Database Foundations – Oracle</div>
+
+        <div class="cert-box">Artificial Intelligence Fundamentals with Capstone Project – IBM</div>
+        <div class="cert-box">IBM SkillsBuild Cybersecurity Certificate – IBM</div>
+    </div>
+
+</section>
+
+<!-- HACKATHON -->
+<section class="card">
+    <h2>Hackathon</h2>
+
+    <div class="project hackathon">
+        <h3>Qadiati+ (قضيتي+)</h3>
+        <span class="badge right">Top 25 Teams</span>
+        <p>AI-powered legal-tech platform with Elm.</p>
+    </div>
+
+</section>
+
+<!-- LANGUAGES -->
+<section class="card languages">
+    <h2>Languages</h2>
+    <p>Arabic</p>
+    <p>English</p>
+</section>
+
+</div>
+
+<!-- BACKGROUND -->
+<script>
+const canvas = document.getElementById("bgCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for (let i = 0; i < 100; i++) {
+    particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 2,
+        speedX: Math.random() * 0.5 - 0.25,
+        speedY: Math.random() * 0.5 - 0.25
+    });
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(167,139,250,0.7)";
+        ctx.fill();
+
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+    });
+
+    requestAnimationFrame(animate);
+}
+animate();
+</script>
+
+</body>
+</html>
