@@ -47,21 +47,31 @@ header h1 {
 }
 
 /* CONTACT */
-.contact {
+ .contact {
     margin-top: 15px;
+    display: flex;
+    justify-content: center; /* يخليهم بالنص */
+    gap: 6px;
 }
 
 .contact span,
 .contact a {
-    display: inline-block;
-    margin: 6px;
-    padding: 10px 16px;
+    display: inline-flex; 
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px; 
     background: rgba(255,255,255,0.05);
-    border-radius: 25px;
+    border-radius: 18px;
     font-size: 14px;
     backdrop-filter: blur(10px);
+    width: fit-content; 
 }
 
+.phone {
+    padding: 4px 10px;
+    font-size: 13px;
+    color: white;
+}
 /* ONLY PHONE ICON WHITE */
 .phone {
     color: white;
