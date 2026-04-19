@@ -51,7 +51,8 @@ header h1 {
     margin-top: 15px;
 }
 
-.contact span {
+.contact span,
+.contact a {
     display: inline-block;
     margin: 6px;
     padding: 10px 16px;
